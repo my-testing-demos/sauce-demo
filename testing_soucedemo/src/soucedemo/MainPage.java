@@ -103,6 +103,38 @@ public class MainPage {
 		Assert.assertEquals(expectedURL, actualURL);
 	}
 	
+	@Test(priority = 9)
+	void emptyFirstName() throws InterruptedException {
+		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
+		driver.findElement(By.id("checkout")).click();
+		driver.findElement(By.id("last-name")).sendKeys("Erandi");
+		driver.findElement(By.id("postal-code")).sendKeys("81400");
+		driver.findElement(By.id("continue")).click();
+		Thread.sleep(2000);
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@class='error-message-container error']")).isDisplayed());
+	}
+	
+	@Test(priority = 10)
+	void emptyLastName() throws InterruptedException {
+		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
+		driver.findElement(By.id("checkout")).click();
+		driver.findElement(By.id("first-name")).sendKeys("Dinishika");
+		driver.findElement(By.id("postal-code")).sendKeys("81400");
+		driver.findElement(By.id("continue")).click();
+		Thread.sleep(2000);
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@class='error-message-container error']")).isDisplayed());
+	}
+	
+	@Test(priority = 11)
+	void emptyZipCode() throws InterruptedException {
+		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
+		driver.findElement(By.id("checkout")).click();
+		driver.findElement(By.id("first-name")).sendKeys("Dinishika");
+		driver.findElement(By.id("last-name")).sendKeys("Erandi");
+		driver.findElement(By.id("continue")).click();
+		Thread.sleep(2000);
+		Assert.assertTrue(driver.findElement(By.xpath("//div[@class='error-message-container error']")).isDisplayed());
+	}
 	
 	@AfterTest
 	void quitDriver() {
