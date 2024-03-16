@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="soucedemo.Login">
+      <class name="soucedemo.MainPage">
         <methods>
-          <include name="incorrectName"/>
-          <include name="incorrectPassword"/>
-          <include name="startDriver"/>
+          <include name="testCheckout"/>
           <include name="quitDriver"/>
+          <include name="startDriver"/>
         </methods>
-      </class> <!-- soucedemo.Login -->
+      </class> <!-- soucedemo.MainPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
