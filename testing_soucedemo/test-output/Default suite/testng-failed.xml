@@ -7,6 +7,8 @@
         <methods>
           <include name="testCheckout"/>
           <include name="quitDriver"/>
+          <include name="emptyLastName"/>
+          <include name="emptyZipCode"/>
           <include name="startDriver"/>
         </methods>
       </class> <!-- soucedemo.MainPage -->
