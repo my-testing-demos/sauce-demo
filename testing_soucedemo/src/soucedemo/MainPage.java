@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -22,14 +20,23 @@ public class MainPage {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\dinis\\Downloads\\chromedriver-win64\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-	}
-	
-	@Test(priority = 1)
-	void addToCart() {
 		driver.get("https://www.saucedemo.com/");
 		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
 		driver.findElement(By.xpath("//input[@id='login-button']")).click();
+	}
+	
+	@Test(priority = 1)
+	void cartButton() {
+		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
+		String expectedURL = "https://www.saucedemo.com/cart.html";
+		String actualURL = driver.getCurrentUrl();
+		Assert.assertEquals(expectedURL,  actualURL);
+	}
+	
+	@Test(priority = 2)
+	void addToCart() {
+		driver.findElement(By.id("continue-shopping")).click();
 		driver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']")).click();
 		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
 		String actualName = driver.findElement(By.xpath("//div[@class='inventory_item_name']")).getText();
@@ -37,7 +44,7 @@ public class MainPage {
 		Assert.assertEquals(expectedName, actualName);
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 3)
 	void removeButtonInCart() {
 		WebElement removeButton = driver.findElement(By.xpath("//button[@id='remove-sauce-labs-backpack']"));
 		removeButton.click();
@@ -45,7 +52,7 @@ public class MainPage {
 		Assert.assertTrue(driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).isDisplayed());
 	}
 	
-	@Test(priority = 3)
+	@Test(priority = 4)
 	void removeButtonInMain() {
 		driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
 		WebElement removeButton = driver.findElement(By.id("remove-sauce-labs-backpack"));
@@ -53,7 +60,7 @@ public class MainPage {
 		Assert.assertTrue(driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).isDisplayed());
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 5)
 	void sortDropdown() throws InterruptedException {
 		Select obj = new Select(driver.findElement(By.xpath("//select[@class='product_sort_container']")));
 		obj.selectByVisibleText("Name (Z to A)");
@@ -63,7 +70,7 @@ public class MainPage {
 		Assert.assertEquals(expectedName, actualName);
 	}
 	
-	@Test(priority = 5)
+	@Test(priority = 6)
 	void sortPriceLowtoHigh() throws InterruptedException {
 		Select obj = new Select(driver.findElement(By.xpath("//select[@class='product_sort_container']")));
 		obj.selectByVisibleText("Price (low to high)");
@@ -73,7 +80,7 @@ public class MainPage {
 		Assert.assertEquals(expectedName, actualName);
 	}
 	
-	@Test(priority = 6)
+	@Test(priority = 7)
 	void sortPriceHightoLow() throws InterruptedException {
 		Select obj = new Select(driver.findElement(By.xpath("//select[@class='product_sort_container']")));
 		obj.selectByVisibleText("Price (high to low)");
@@ -83,7 +90,7 @@ public class MainPage {
 		Assert.assertEquals(expectedName, actualName);
 	}
 	
-	@Test(priority = 7)
+	@Test(priority = 8)
 	void testCheckout() throws InterruptedException {
 		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
 		driver.findElement(By.id("checkout")).click();

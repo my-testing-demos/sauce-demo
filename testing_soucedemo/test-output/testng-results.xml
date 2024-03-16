@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-16T15:14:45 IST" name="Default suite" finished-at="2024-03-16T15:15:00 IST" duration-ms="14860">
+  <suite started-at="2024-03-16T15:22:05 IST" name="Default suite" finished-at="2024-03-16T15:22:18 IST" duration-ms="13059">
     <groups>
     </groups>
-    <test started-at="2024-03-16T15:14:45 IST" name="Default test" finished-at="2024-03-16T15:15:00 IST" duration-ms="14860">
+    <test started-at="2024-03-16T15:22:05 IST" name="Default test" finished-at="2024-03-16T15:22:18 IST" duration-ms="13059">
       <class name="soucedemo.MainPage">
-        <test-method is-config="true" signature="startDriver()[pri:0, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:45 IST" name="startDriver" finished-at="2024-03-16T15:14:49 IST" duration-ms="3773" status="PASS">
+        <test-method is-config="true" signature="startDriver()[pri:0, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:05 IST" name="startDriver" finished-at="2024-03-16T15:22:10 IST" duration-ms="4251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method signature="addToCart()[pri:1, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:49 IST" name="addToCart" finished-at="2024-03-16T15:14:51 IST" duration-ms="2290" status="PASS">
+        <test-method signature="cartButton()[pri:1, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:10 IST" name="cartButton" finished-at="2024-03-16T15:22:10 IST" duration-ms="201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cartButton -->
+        <test-method signature="addToCart()[pri:2, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:10 IST" name="addToCart" finished-at="2024-03-16T15:22:10 IST" duration-ms="418" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToCart -->
-        <test-method signature="removeButtonInCart()[pri:2, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:51 IST" name="removeButtonInCart" finished-at="2024-03-16T15:14:51 IST" duration-ms="297" status="PASS">
+        <test-method signature="removeButtonInCart()[pri:3, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:10 IST" name="removeButtonInCart" finished-at="2024-03-16T15:22:11 IST" duration-ms="231" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeButtonInCart -->
-        <test-method signature="removeButtonInMain()[pri:3, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:51 IST" name="removeButtonInMain" finished-at="2024-03-16T15:14:51 IST" duration-ms="217" status="PASS">
+        <test-method signature="removeButtonInMain()[pri:4, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:11 IST" name="removeButtonInMain" finished-at="2024-03-16T15:22:11 IST" duration-ms="181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeButtonInMain -->
-        <test-method signature="sortDropdown()[pri:4, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:51 IST" name="sortDropdown" finished-at="2024-03-16T15:14:54 IST" duration-ms="2224" status="PASS">
+        <test-method signature="sortDropdown()[pri:5, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:11 IST" name="sortDropdown" finished-at="2024-03-16T15:22:13 IST" duration-ms="2182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sortDropdown -->
-        <test-method signature="sortPriceLowtoHigh()[pri:5, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:54 IST" name="sortPriceLowtoHigh" finished-at="2024-03-16T15:14:56 IST" duration-ms="2229" status="PASS">
+        <test-method signature="sortPriceLowtoHigh()[pri:6, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:13 IST" name="sortPriceLowtoHigh" finished-at="2024-03-16T15:22:15 IST" duration-ms="2135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sortPriceLowtoHigh -->
-        <test-method signature="sortPriceHightoLow()[pri:6, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:56 IST" name="sortPriceHightoLow" finished-at="2024-03-16T15:14:58 IST" duration-ms="2177" status="PASS">
+        <test-method signature="sortPriceHightoLow()[pri:7, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:15 IST" name="sortPriceHightoLow" finished-at="2024-03-16T15:22:17 IST" duration-ms="2129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sortPriceHightoLow -->
-        <test-method signature="testCheckout()[pri:7, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:58 IST" name="testCheckout" finished-at="2024-03-16T15:14:59 IST" duration-ms="1203" status="PASS">
+        <test-method signature="testCheckout()[pri:8, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:17 IST" name="testCheckout" finished-at="2024-03-16T15:22:18 IST" duration-ms="945" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCheckout -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:soucedemo.MainPage@1de76cc7]" started-at="2024-03-16T15:14:59 IST" name="quitDriver" finished-at="2024-03-16T15:15:00 IST" duration-ms="348" status="PASS">
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T15:22:18 IST" name="quitDriver" finished-at="2024-03-16T15:22:18 IST" duration-ms="308" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
