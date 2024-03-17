@@ -1,73 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-16T16:59:40 IST" name="Default suite" finished-at="2024-03-16T17:00:02 IST" duration-ms="21438">
+  <suite started-at="2024-03-17T12:17:03 IST" name="Default suite" finished-at="2024-03-17T12:17:32 IST" duration-ms="28814">
     <groups>
     </groups>
-    <test started-at="2024-03-16T16:59:40 IST" name="Default test" finished-at="2024-03-16T17:00:02 IST" duration-ms="21438">
-      <class name="soucedemo.MainPage">
-        <test-method is-config="true" signature="startDriver()[pri:0, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:40 IST" name="startDriver" finished-at="2024-03-16T16:59:45 IST" duration-ms="4388" status="PASS">
+    <test started-at="2024-03-17T12:17:03 IST" name="Default test" finished-at="2024-03-17T12:17:32 IST" duration-ms="28814">
+      <class name="soucedemo.FooterTesting">
+        <test-method is-config="true" signature="startDriver()[pri:0, instance:soucedemo.FooterTesting@485966cc]" started-at="2024-03-17T12:17:03 IST" name="startDriver" finished-at="2024-03-17T12:17:07 IST" duration-ms="3798" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method signature="cartButton()[pri:1, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:45 IST" name="cartButton" finished-at="2024-03-16T16:59:45 IST" duration-ms="222" status="PASS">
+        <test-method signature="linkTwitter()[pri:1, instance:soucedemo.FooterTesting@485966cc]" started-at="2024-03-17T12:17:07 IST" name="linkTwitter" finished-at="2024-03-17T12:17:17 IST" duration-ms="9367" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- cartButton -->
-        <test-method signature="addToCart()[pri:2, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:45 IST" name="addToCart" finished-at="2024-03-16T16:59:45 IST" duration-ms="405" status="PASS">
+        </test-method> <!-- linkTwitter -->
+        <test-method signature="linkFacebook()[pri:2, instance:soucedemo.FooterTesting@485966cc]" started-at="2024-03-17T12:17:17 IST" name="linkFacebook" finished-at="2024-03-17T12:17:24 IST" duration-ms="7689" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addToCart -->
-        <test-method signature="removeButtonInCart()[pri:3, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:45 IST" name="removeButtonInCart" finished-at="2024-03-16T16:59:46 IST" duration-ms="192" status="PASS">
+        </test-method> <!-- linkFacebook -->
+        <test-method signature="linkLinkedIn()[pri:3, instance:soucedemo.FooterTesting@485966cc]" started-at="2024-03-17T12:17:24 IST" name="linkLinkedIn" finished-at="2024-03-17T12:17:32 IST" duration-ms="7895" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- removeButtonInCart -->
-        <test-method signature="removeButtonInMain()[pri:4, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:46 IST" name="removeButtonInMain" finished-at="2024-03-16T16:59:46 IST" duration-ms="152" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- removeButtonInMain -->
-        <test-method signature="sortDropdown()[pri:5, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:46 IST" name="sortDropdown" finished-at="2024-03-16T16:59:48 IST" duration-ms="2172" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sortDropdown -->
-        <test-method signature="sortPriceLowtoHigh()[pri:6, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:48 IST" name="sortPriceLowtoHigh" finished-at="2024-03-16T16:59:50 IST" duration-ms="2125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sortPriceLowtoHigh -->
-        <test-method signature="sortPriceHightoLow()[pri:7, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:50 IST" name="sortPriceHightoLow" finished-at="2024-03-16T16:59:52 IST" duration-ms="2122" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sortPriceHightoLow -->
-        <test-method signature="emptyFirstName()[pri:8, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:52 IST" name="emptyFirstName" finished-at="2024-03-16T16:59:55 IST" duration-ms="2699" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyFirstName -->
-        <test-method signature="emptyLastName()[pri:9, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:55 IST" name="emptyLastName" finished-at="2024-03-16T16:59:58 IST" duration-ms="2973" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyLastName -->
-        <test-method signature="emptyZipCode()[pri:10, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T16:59:58 IST" name="emptyZipCode" finished-at="2024-03-16T17:00:00 IST" duration-ms="2552" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyZipCode -->
-        <test-method signature="testCheckout()[pri:11, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T17:00:00 IST" name="testCheckout" finished-at="2024-03-16T17:00:01 IST" duration-ms="786" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCheckout -->
-        <test-method signature="finishiButton()[pri:12, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T17:00:01 IST" name="finishiButton" finished-at="2024-03-16T17:00:01 IST" duration-ms="140" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- finishiButton -->
-        <test-method signature="backHomeButton()[pri:13, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T17:00:01 IST" name="backHomeButton" finished-at="2024-03-16T17:00:01 IST" duration-ms="110" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- backHomeButton -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:soucedemo.MainPage@593aaf41]" started-at="2024-03-16T17:00:01 IST" name="quitDriver" finished-at="2024-03-16T17:00:02 IST" duration-ms="309" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quitDriver -->
-      </class> <!-- soucedemo.MainPage -->
+        </test-method> <!-- linkLinkedIn -->
+      </class> <!-- soucedemo.FooterTesting -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -152,6 +152,22 @@ public class MainPage {
 		Assert.assertEquals(expectedURL, actualURL);
 	}
 	
+	@Test(priority = 14)
+	void productDetails() {
+		driver.findElement(By.xpath("//div[normalize-space()='Sauce Labs Bolt T-Shirt']")).click();
+		String expectedURL = "https://www.saucedemo.com/inventory-item.html?id=1";
+		String actualURL = driver.getCurrentUrl();
+		Assert.assertEquals(expectedURL, actualURL);
+	}
+	
+	@Test(priority = 15)
+	void backToProduts() {
+		driver.findElement(By.id("back-to-products")).click();
+		String expectedURL = "https://www.saucedemo.com/inventory.html";
+		String actualURL = driver.getCurrentUrl();
+		Assert.assertEquals(expectedURL, actualURL);
+	}
+	
 	@AfterTest
 	void quitDriver() {
 		driver.quit();

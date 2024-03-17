@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="soucedemo.MainPage">
+      <class name="soucedemo.FooterTesting">
         <methods>
-          <include name="testCheckout"/>
-          <include name="quitDriver"/>
-          <include name="emptyLastName"/>
-          <include name="emptyZipCode"/>
+          <include name="linkLinkedIn"/>
           <include name="startDriver"/>
+          <include name="linkFacebook"/>
         </methods>
-      </class> <!-- soucedemo.MainPage -->
+      </class> <!-- soucedemo.FooterTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
