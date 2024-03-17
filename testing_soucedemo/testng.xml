@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SouceDemoSuite">
+  <test name="TestAllClasses">
+    <classes>
+      <class name="soucedemo.Cart"/>
+      <class name="soucedemo.FooterTesting"/>
+      <class name="soucedemo.Login"/>
+      <class name="soucedemo.ProductSorting"/>
+      <class name="soucedemo.Checkout"/>
+    </classes>
+  </test> <!-- TestAllClasses -->
+</suite> <!-- SouceDemoSuite -->
