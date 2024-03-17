@@ -17,26 +17,15 @@ public class Login {
 		driver.manage().window().maximize();
 	}
 	
-	@Test(priority = 3)
-	void correctNameAndPassword() {
-		driver.get("https://www.saucedemo.com/");
-		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
-		driver.findElement(By.xpath("//input[@id='login-button']")).click();
-		String expected = "https://www.saucedemo.com/inventory.html";
-		String actual = driver.getCurrentUrl();
-		Assert.assertEquals(expected, actual);
-	}
-	
 	@Test(priority = 2)
 	void incorrectPassword(){
 		driver.get("https://www.saucedemo.com/");
 		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sause");
 		driver.findElement(By.xpath("//input[@id='login-button']")).click();
-		String expected = "https://www.saucedemo.com/inventory.html";
+		String expected = "https://www.saucedemo.com/";
 		String actual = driver.getCurrentUrl();
-		Assert.assertEquals(expected, actual);
+		Assert.assertEquals(actual, expected);
 	}
 	
 	@Test(priority = 1)
@@ -45,16 +34,31 @@ public class Login {
 		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("new_user");
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
 		driver.findElement(By.xpath("//input[@id='login-button']")).click();
-		String expected = "https://www.saucedemo.com/inventory.html";
+		String expected = "https://www.saucedemo.com/";
 		String actual = driver.getCurrentUrl();
 		Assert.assertEquals(expected, actual);
 	}
 	
+	@Test(priority = 3)
+	void correctNameAndPassword() throws InterruptedException {
+		driver.get("https://www.saucedemo.com/");
+		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
+		driver.findElement(By.xpath("//input[@id='login-button']")).click();
+		String expected = "https://www.saucedemo.com/inventory.html";
+		String actual = driver.getCurrentUrl();
+		Assert.assertEquals(expected, actual);
+		Thread.sleep(5000);
+	}
+	
 	@Test(priority =4)
-	void logout() {
+	void logout() throws InterruptedException {
 		driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']")).click();
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//a[@id='logout_sidebar_link']")).click();
+		Thread.sleep(2000);
 		String expected = "https://www.saucedemo.com/";
+		Thread.sleep(2000);
 		String actual = driver.getCurrentUrl();
 		Assert.assertEquals(expected, actual);
 	}

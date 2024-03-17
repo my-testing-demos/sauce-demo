@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -77,5 +78,10 @@ public class FooterTesting {
 		driver.close();
 		Thread.sleep(5000);
 		driver.switchTo().window(windowHandles.iterator().next());
+	}
+	
+	@AfterTest
+	void quitDriver() {
+		driver.quit();
 	}
 }
