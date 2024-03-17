@@ -23,35 +23,26 @@ public class ProductSorting {
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
 		driver.findElement(By.xpath("//input[@id='login-button']")).click();
 	}
-	@Test(priority = 5)
-	void sortDropdown() throws InterruptedException {
+	@Test(priority = 1, dataProvider = "dropDownList", dataProviderClass = TestDataProvider.class)
+	void sortDropdown(String sortingType) throws InterruptedException {
 		Select obj = new Select(driver.findElement(By.xpath("//select[@class='product_sort_container']")));
-		obj.selectByVisibleText("Name (Z to A)");
+		obj.selectByVisibleText(sortingType);
 		Thread.sleep(2000);
 		String actualName = driver.findElement(By.xpath("//span[@class='active_option']")).getText();
-		String expectedName = "Name (Z to A)";
+		String expectedName = sortingType;
 		Assert.assertEquals(expectedName, actualName);
 	}
 	
-	@Test(priority = 6)
-	void sortPriceLowtoHigh() throws InterruptedException {
+	@Test(priority = 2, dataProvider = "dropDownList", dataProviderClass = TestDataProvider.class)
+	void checkSort(String sortingType, String price) throws InterruptedException {
 		Select obj = new Select(driver.findElement(By.xpath("//select[@class='product_sort_container']")));
-		obj.selectByVisibleText("Price (low to high)");
+		obj.selectByVisibleText(sortingType);
 		Thread.sleep(2000);
 		String actualName = driver.findElement(By.xpath("//div[@class='inventory_list']//div[1]//div[2]//div[2]//div[1]")).getText();
-		String expectedName = "$7.99";
+		String expectedName = price;
 		Assert.assertEquals(expectedName, actualName);
 	}
 	
-	@Test(priority = 7)
-	void sortPriceHightoLow() throws InterruptedException {
-		Select obj = new Select(driver.findElement(By.xpath("//select[@class='product_sort_container']")));
-		obj.selectByVisibleText("Price (high to low)");
-		Thread.sleep(2000);
-		String actualName = driver.findElement(By.xpath("//div[@class='inventory_list']//div[1]//div[2]//div[2]//div[1]")).getText();
-		String expectedName = "$49.99";
-		Assert.assertEquals(expectedName, actualName);
-	}
 	@AfterTest
 	void quitDriver() {
 		driver.quit();

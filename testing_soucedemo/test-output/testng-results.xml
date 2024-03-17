@@ -2,32 +2,68 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-17T12:57:53 IST" name="Default suite" finished-at="2024-03-17T12:58:02 IST" duration-ms="9345">
+  <suite started-at="2024-03-17T18:38:05 IST" name="Default suite" finished-at="2024-03-17T18:38:33 IST" duration-ms="28177">
     <groups>
     </groups>
-    <test started-at="2024-03-17T12:57:53 IST" name="Default test" finished-at="2024-03-17T12:58:02 IST" duration-ms="9345">
-      <class name="soucedemo.ProductSorting">
-        <test-method is-config="true" signature="startDriver()[pri:0, instance:soucedemo.ProductSorting@1de76cc7]" started-at="2024-03-17T12:57:53 IST" name="startDriver" finished-at="2024-03-17T12:57:56 IST" duration-ms="2670" status="PASS">
+    <test started-at="2024-03-17T18:38:05 IST" name="Default test" finished-at="2024-03-17T18:38:33 IST" duration-ms="28177">
+      <class name="soucedemo.FooterTesting">
+        <test-method is-config="true" signature="startDriver()[pri:0, instance:soucedemo.FooterTesting@54bff557]" started-at="2024-03-17T18:38:05 IST" name="startDriver" finished-at="2024-03-17T18:38:09 IST" duration-ms="4111" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method signature="sortDropdown()[pri:5, instance:soucedemo.ProductSorting@1de76cc7]" started-at="2024-03-17T12:57:56 IST" name="sortDropdown" finished-at="2024-03-17T12:57:58 IST" duration-ms="2195" status="PASS">
+        <test-method signature="linkTwitter(java.lang.String,java.lang.String)[pri:0, instance:soucedemo.FooterTesting@54bff557]" started-at="2024-03-17T18:38:09 IST" name="linkTwitter" data-provider="socialMediaDataset" finished-at="2024-03-17T18:38:18 IST" duration-ms="9171" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[//a[normalize-space()='Twitter']]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://twitter.com/saucelabs]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sortDropdown -->
-        <test-method signature="sortPriceLowtoHigh()[pri:6, instance:soucedemo.ProductSorting@1de76cc7]" started-at="2024-03-17T12:57:58 IST" name="sortPriceLowtoHigh" finished-at="2024-03-17T12:58:00 IST" duration-ms="2146" status="PASS">
+        </test-method> <!-- linkTwitter -->
+        <test-method signature="linkTwitter(java.lang.String,java.lang.String)[pri:0, instance:soucedemo.FooterTesting@54bff557]" started-at="2024-03-17T18:38:18 IST" name="linkTwitter" data-provider="socialMediaDataset" finished-at="2024-03-17T18:38:26 IST" duration-ms="7283" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[//a[normalize-space()='Facebook']]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.facebook.com/saucelabs]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sortPriceLowtoHigh -->
-        <test-method signature="sortPriceHightoLow()[pri:7, instance:soucedemo.ProductSorting@1de76cc7]" started-at="2024-03-17T12:58:00 IST" name="sortPriceHightoLow" finished-at="2024-03-17T12:58:02 IST" duration-ms="2147" status="PASS">
+        </test-method> <!-- linkTwitter -->
+        <test-method signature="linkTwitter(java.lang.String,java.lang.String)[pri:0, instance:soucedemo.FooterTesting@54bff557]" started-at="2024-03-17T18:38:26 IST" name="linkTwitter" data-provider="socialMediaDataset" finished-at="2024-03-17T18:38:33 IST" duration-ms="7311" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[//a[normalize-space()='LinkedIn']]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://www.linkedin.com/company/sauce-labs/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sortPriceHightoLow -->
-        <test-method is-config="true" signature="quitDriver()[pri:0, instance:soucedemo.ProductSorting@1de76cc7]" started-at="2024-03-17T12:58:02 IST" name="quitDriver" finished-at="2024-03-17T12:58:02 IST" duration-ms="148" status="PASS">
+        </test-method> <!-- linkTwitter -->
+        <test-method is-config="true" signature="quitDriver()[pri:0, instance:soucedemo.FooterTesting@54bff557]" started-at="2024-03-17T18:38:33 IST" name="quitDriver" finished-at="2024-03-17T18:38:33 IST" duration-ms="237" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-      </class> <!-- soucedemo.ProductSorting -->
+      </class> <!-- soucedemo.FooterTesting -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

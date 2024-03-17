@@ -50,28 +50,22 @@ public class Cart {
 		Assert.assertTrue(driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).isDisplayed());
 	}
 	
-	@Test(priority = 4)
-	void removeButtonInMain() {
-		driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
-		WebElement removeButton = driver.findElement(By.id("remove-sauce-labs-backpack"));
+	@Test(priority = 4, dataProvider = "removeButtonDataset", dataProviderClass = TestDataProvider.class)
+	void removeButtonInMain(String addToCart, String remove) {
+		driver.findElement(By.id(addToCart)).click();
+		WebElement removeButton = driver.findElement(By.id(remove));
 		removeButton.click();
-		Assert.assertTrue(driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.id(addToCart)).isDisplayed());
 	}
 	
-	@Test(priority = 14)
-	void productDetails() {
-		driver.findElement(By.xpath("//div[normalize-space()='Sauce Labs Bolt T-Shirt']")).click();
-		String expectedURL = "https://www.saucedemo.com/inventory-item.html?id=1";
+	@Test(priority = 5, dataProvider = "productDataset", dataProviderClass = TestDataProvider.class)
+	void productDetails(String productName, String url) throws InterruptedException{
+		driver.findElement(By.xpath(productName)).click();
+		String expectedURL = url;
+		Thread.sleep(3000);
 		String actualURL = driver.getCurrentUrl();
 		Assert.assertEquals(expectedURL, actualURL);
-	}
-	
-	@Test(priority = 15)
-	void backToProduts() {
-		driver.findElement(By.id("back-to-products")).click();
-		String expectedURL = "https://www.saucedemo.com/inventory.html";
-		String actualURL = driver.getCurrentUrl();
-		Assert.assertEquals(expectedURL, actualURL);
+		driver.findElement(By.xpath("//button[@id='back-to-products']")).click();
 	}
 	
 	@AfterTest

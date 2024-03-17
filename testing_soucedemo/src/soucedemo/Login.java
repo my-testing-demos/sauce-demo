@@ -17,7 +17,7 @@ public class Login {
 		driver.manage().window().maximize();
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 1)
 	void incorrectPassword(){
 		driver.get("https://www.saucedemo.com/");
 		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
@@ -28,7 +28,7 @@ public class Login {
 		Assert.assertEquals(actual, expected);
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 2)
 	void incorrectName() {
 		driver.get("https://www.saucedemo.com/");
 		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("new_user");
@@ -39,11 +39,11 @@ public class Login {
 		Assert.assertEquals(expected, actual);
 	}
 	
-	@Test(priority = 3)
-	void correctNameAndPassword() throws InterruptedException {
+	@Test(priority = 3, dataProvider = "loginDataset", dataProviderClass = TestDataProvider.class)
+	void correctNameAndPassword(String username, String password) throws InterruptedException {
 		driver.get("https://www.saucedemo.com/");
-		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("standard_user");
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("secret_sauce");
+		driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys(username);
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
 		driver.findElement(By.xpath("//input[@id='login-button']")).click();
 		String expected = "https://www.saucedemo.com/inventory.html";
 		String actual = driver.getCurrentUrl();

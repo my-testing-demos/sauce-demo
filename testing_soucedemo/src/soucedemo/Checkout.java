@@ -24,40 +24,19 @@ public class Checkout {
 	}
 	
 
-	@Test(priority = 8)
-	void emptyFirstName() throws InterruptedException {
+	@Test(priority = 1, dataProvider = "checkoutDataset", dataProviderClass = TestDataProvider.class)
+	void emptyinputs(String firstname, String lastname, String zipcode) throws InterruptedException {
 		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
 		driver.findElement(By.id("checkout")).click();
-		driver.findElement(By.id("last-name")).sendKeys("Erandi");
-		driver.findElement(By.id("postal-code")).sendKeys("81400");
+		driver.findElement(By.id("first-name")).sendKeys(firstname);
+		driver.findElement(By.id("last-name")).sendKeys(lastname);
+		driver.findElement(By.id("postal-code")).sendKeys(zipcode);
 		driver.findElement(By.id("continue")).click();
 		Thread.sleep(2000);
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@class='error-message-container error']")).isDisplayed());
 	}
 	
-	@Test(priority = 9)
-	void emptyLastName() throws InterruptedException {
-		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
-		driver.findElement(By.id("checkout")).click();
-		driver.findElement(By.id("first-name")).sendKeys("Dinishika");
-		driver.findElement(By.id("postal-code")).sendKeys("81400");
-		driver.findElement(By.id("continue")).click();
-		Thread.sleep(2000);
-		Assert.assertTrue(driver.findElement(By.xpath("//div[@class='error-message-container error']")).isDisplayed());
-	}
-	
-	@Test(priority = 10)
-	void emptyZipCode() throws InterruptedException {
-		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
-		driver.findElement(By.id("checkout")).click();
-		driver.findElement(By.id("first-name")).sendKeys("Dinishika");
-		driver.findElement(By.id("last-name")).sendKeys("Erandi");
-		driver.findElement(By.id("continue")).click();
-		Thread.sleep(2000);
-		Assert.assertTrue(driver.findElement(By.xpath("//div[@class='error-message-container error']")).isDisplayed());
-	}
-	
-	@Test(priority = 11)
+	@Test(priority = 2)
 	void testCheckout() {
 		driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
 		driver.findElement(By.id("checkout")).click();
@@ -70,7 +49,7 @@ public class Checkout {
 		Assert.assertEquals(expectedURL, actualURL);
 	}
 	
-	@Test(priority = 12)
+	@Test(priority = 3)
 	void finishiButton() {
 		driver.findElement(By.id("finish")).click();
 		String actualURL = driver.getCurrentUrl();
@@ -78,7 +57,7 @@ public class Checkout {
 		Assert.assertEquals(expectedURL, actualURL);
 	}
 	
-	@Test(priority = 13)
+	@Test(priority = 4)
 	void backHomeButton() {
 		driver.findElement(By.id("back-to-products")).click();
 		String expectedURL = "https://www.saucedemo.com/inventory.html";

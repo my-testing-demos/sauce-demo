@@ -26,10 +26,10 @@ public class FooterTesting {
 		driver.findElement(By.xpath("//input[@id='login-button']")).click();
 	}
 	
-	@Test(priority = 1)
-	void linkTwitter()throws InterruptedException {
-		driver.findElement(By.xpath("//a[normalize-space()='Twitter']")).click();
-		String expectedURL = "https://twitter.com/saucelabs";
+	@Test(dataProvider = "socialMediaDataset", dataProviderClass = TestDataProvider.class)
+	void linkTwitter(String socialMediaButton, String url)throws InterruptedException {
+		driver.findElement(By.xpath(socialMediaButton)).click();
+		String expectedURL = url;
 		Thread.sleep(2000);
         Set<String> windowHandles = driver.getWindowHandles();
 
@@ -44,42 +44,6 @@ public class FooterTesting {
 		driver.switchTo().window(windowHandles.iterator().next());
 	}
 
-	@Test(priority = 2)
-	void linkFacebook()throws InterruptedException {
-		driver.findElement(By.xpath("//a[normalize-space()='Facebook']")).click();
-		String expectedURL = "https://www.facebook.com/saucelabs";
-		Thread.sleep(2000);
-        Set<String> windowHandles = driver.getWindowHandles();
-
-        for (String windowHandle : windowHandles) {
-            driver.switchTo().window(windowHandle);
-        }
-
-		String actualURL = driver.getCurrentUrl();
-		Assert.assertEquals(actualURL, expectedURL);
-		driver.close();
-		Thread.sleep(5000);
-		driver.switchTo().window(windowHandles.iterator().next());
-	}
-	
-	@Test(priority = 3)
-	void linkLinkedIn()throws InterruptedException {
-		driver.findElement(By.xpath("//a[normalize-space()='LinkedIn']")).click();
-		String expectedURL = "https://www.linkedin.com/company/sauce-labs/";
-		Thread.sleep(2000);
-        Set<String> windowHandles = driver.getWindowHandles();
-
-        for (String windowHandle : windowHandles) {
-            driver.switchTo().window(windowHandle);
-        }
-
-		String actualURL = driver.getCurrentUrl();
-		Assert.assertEquals(actualURL, expectedURL);
-		driver.close();
-		Thread.sleep(5000);
-		driver.switchTo().window(windowHandles.iterator().next());
-	}
-	
 	@AfterTest
 	void quitDriver() {
 		driver.quit();
