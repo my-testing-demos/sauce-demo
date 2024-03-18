@@ -27,7 +27,7 @@ public class FooterTesting {
 	}
 	
 	@Test(dataProvider = "socialMediaDataset", dataProviderClass = TestDataProvider.class)
-	void linkTwitter(String socialMediaButton, String url)throws InterruptedException {
+	void socialMediaButtons(String socialMediaButton, String url)throws InterruptedException {
 		driver.findElement(By.xpath(socialMediaButton)).click();
 		String expectedURL = url;
 		Thread.sleep(2000);
